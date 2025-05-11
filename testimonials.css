@@ -1,0 +1,50 @@
+/* Dynamic Article Styles */
+:root {
+  --article-bg-color: #ffffff;
+  --article-border-color: #1e1e2f;
+  --article-shadow-color: rgba(0, 0, 0, 0.05);
+  --article-hover-shadow-color: rgba(0, 0, 0, 0.1);
+  --article-hover-bg-color: #f5f5f5;
+  --article-border-radius: 6px;
+}
+
+article {
+  background-color: var(--article-bg-color);
+  border-left: 4px solid var(--article-border-color);
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-radius: var(--article-border-radius);
+  box-shadow: 0 2px 4px var(--article-shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  background-color: var(--article-hover-bg-color);
+  box-shadow: 0 6px 12px var(--article-hover-shadow-color);
+}
+
+article p {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+article:hover p {
+  color: #0077cc; /* Change text color when article is hovered */
+}
+
+/* Smooth transition for article appearance */
+article {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInArticle 0.5s forwards;
+}
+
+@keyframes fadeInArticle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

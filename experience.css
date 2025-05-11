@@ -1,0 +1,44 @@
+.experience {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1e1e2f;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.experience h3 {
+  color: #0077cc;
+  margin-top: 0;
+  transition: color 0.3s ease;
+}
+
+.experience h3:hover {
+  color: #ffcc00;
+}
+
+.experience ul {
+  padding-left: 20px;
+}
+
+.experience ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 10px;
+}
+
+.experience ul li::before {
+  content: '➤';
+  position: absolute;
+  left: 0;
+  color: #0077cc;
+  font-size: 0.8rem;
+  top: 2px;
+}

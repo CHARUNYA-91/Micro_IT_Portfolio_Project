@@ -1,0 +1,68 @@
+#skills {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#skills:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#skills h2 {
+  text-align: center;
+  color: #0077cc;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.skill-bar {
+  margin-bottom: 25px;
+}
+
+.skill-bar span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.fill {
+  background: linear-gradient(90deg, #007acc, #00c6ff);
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Optional: Animate bars on scroll (basic) */
+.skill-bar .fill.animate {
+  width: var(--skill-level, 80%);
+}
+
+/* Responsive fix */
+@media (prefers-color-scheme: dark) {
+  #skills {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .skill-bar span {
+    color: #f0f0f0;
+  }
+
+  .bar {
+    background-color: #333;
+  }
+}

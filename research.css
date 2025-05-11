@@ -1,0 +1,258 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* General Layout */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #2a0845, #6441a5, #2a0845);
+  background-size: 600% 600%;
+  animation: backgroundShift 15s ease infinite;
+  color: #f0f0f5;
+  padding: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background-color: #1e1e2f;
+  color: #fff;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+header h1:hover {
+  color: #ffd700;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 15px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Main and Section Content */
+main,
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main:hover,
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #0077cc;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Articles */
+article {
+  background-color: white;
+  border-left: 4px solid #1e1e2f;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+article h3 {
+  margin-top: 0;
+  color: #0077cc;
+}
+
+/* Experience Section */
+.experience {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1e1e2f;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.experience h3 {
+  color: #0077cc;
+  margin-top: 0;
+  transition: color 0.3s ease;
+}
+
+.experience h3:hover {
+  color: #ffcc00;
+}
+
+.experience ul {
+  padding-left: 20px;
+}
+
+.experience ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 10px;
+}
+
+.experience ul li::before {
+  content: '➤';
+  position: absolute;
+  left: 0;
+  color: #0077cc;
+  font-size: 0.8rem;
+  top: 2px;
+}
+
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e1e2f;
+  color: #fff;
+  margin-top: 40px;
+  border-radius: 0 0 10px 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main,
+  section {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  section {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  }
+
+  nav {
+    background-color: #222;
+  }
+
+  nav a {
+    color: #ccc;
+  }
+
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  header {
+    background-color: #0d0d1f;
+  }
+
+  footer {
+    background-color: #0d0d1f;
+  }
+
+  #contact a {
+    color: #66b2ff;
+  }
+}
